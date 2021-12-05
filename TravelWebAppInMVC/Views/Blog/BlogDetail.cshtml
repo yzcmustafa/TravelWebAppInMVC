@@ -1,0 +1,75 @@
+﻿@model TravelWebAppInMVC.Models.Classes.BlogComment
+@{
+    ViewBag.Title = "BlogDetail";
+    Layout = "~/Views/Shared/_MainLayout.cshtml";
+}
+
+<!DOCTYPE HTML>
+<html>
+<head>
+    <title>Personal Blog a Blogging Category Flat Bootstarp  Responsive Website Template | Single :: w3layouts</title>
+    <link href="~/blogweb/css/bootstrap.css" rel='stylesheet' type='text/css' />
+    <link href="~/blogweb/css/style.css" rel='stylesheet' type='text/css' />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="keywords" content="Personal Blog Responsive web template, Bootstrap Web Templates, Flat Web Templates, Andriod Compatible web template,
+	Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyErricsson, Motorola web design" />
+    <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+    <!----webfonts---->
+    <link href='http://fonts.googleapis.com/css?family=Oswald:100,400,300,700' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Lato:100,300,400,700,900,300italic' rel='stylesheet' type='text/css'>
+    <!----//webfonts---->
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+</head>
+<body>
+    <!---header---->
+    <div class="header">
+        
+    </div>
+    <!--/header-->
+    <div class="single">
+        <div class="container">
+            <div class="col-md-8 single-main">
+                <div class="single-grid">
+                    @foreach (var item in Model.Value1)
+                    {
+                        <img src="@item.BlogImage" alt="" style="margin-bottom:20px" />
+                        @item.Title
+                        <p>
+                            @item.Contents
+                        </p>
+                    }
+                </div>
+                @foreach (var item in Model.Value2)
+                {
+                    <ul class="comment-list">
+                        <li>
+                            <img src="~/blogweb/images/avatar.png" class="img-responsive" alt="">
+                            <div class="desc">
+                                <p>@item.UserName: @item.CommentEnd </p>
+                            </div>
+                            <div class="clearfix"></div>
+                        </li>
+                    </ul>
+
+                }
+                <div class="content-form">
+                    <h3>Bir Yorum Yap!</h3>
+                    <form>
+                        <input type="text" placeholder="Ad" required />
+                        <input type="text" placeholder="Mail" required />
+                        <textarea placeholder="Yorum"></textarea>
+                        <input type="submit" value="Yorum Gönder" />
+                    </form>
+                </div>
+            </div>
+
+            <div class="col-md-4 side-content">
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+   
+
+
