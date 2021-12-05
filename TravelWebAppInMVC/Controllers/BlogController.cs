@@ -26,5 +26,18 @@ namespace TravelWebAppInMVC.Controllers
             bc.Value2 = c.Comments.Where(x => x.BlogID == id).ToList();
             return View(bc);
         }
+        [HttpGet]
+        public PartialViewResult CommentGet(int id)
+        {
+            ViewBag.value = id;
+            return PartialView();
+        }
+        [HttpPost]
+        public PartialViewResult CommentGet(Comment yorum)
+        {
+            c.Comments.Add(yorum);
+            c.SaveChanges();
+            return PartialView("Index");
+        }
     }
 }
